@@ -8,18 +8,33 @@ public class Arquero extends Unidad {
 	 * daño de 5 puntos, y comienzan con 50 de salud
 	 */
 
-	private int distancia;
 	private int flechas;
 
-	public Arquero(int salud, int daño) {
-		super(salud, daño);
-		// TODO Auto-generated constructor stub
+	public Arquero(int posicion) {
+		super(50, 5, posicion);
+		this.flechas = 20;
 	}
 
 	@Override
-	public void atacar() {
-		// TODO Auto-generated method stub
+	public boolean puedeAtacar(Unidad oponente) {
+		return (this != oponente && !this.estaMuerto() && !oponente.estaMuerto() && estaDentroDelAlcance(oponente, 2, 5)
+				&& getFlechas() >= 1);
+	}
 
+	@Override
+	public void atacar(Unidad oponente) {
+		if (this.puedeAtacar(oponente)) {
+			this.flechas -= 1;
+			infringirDanio(oponente);
+		}
+	}
+
+	public int getFlechas() {
+		return flechas;
+	}
+
+	public void recargarFlechas() {
+		this.flechas += 6;
 	}
 
 }
