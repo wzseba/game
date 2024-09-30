@@ -5,17 +5,21 @@ public class Lancero extends Unidad {
 	 * Los lanceros pueden atacar a una distancia de 1 a 3, sin condición. Infringen
 	 * un daño de 25 puntos, y comienzan con 150 de salud
 	 */
-	private int distancia;
 
-	public Lancero(int salud, int daño) {
-		super(salud, daño);
-		// TODO Auto-generated constructor stub
+	public Lancero(int posicion) {
+		super(150, 25, posicion);
 	}
 
 	@Override
-	public void atacar() {
-		// TODO Auto-generated method stub
-
+	public boolean puedeAtacar(Unidad oponente) {
+		return (this != oponente && !oponente.estaMuerto() && !this.estaMuerto() && estaDentroDelAlcance(oponente, 1, 3)
+				&& this.getSalud() >= 1);
 	}
 
+	@Override
+	public void atacar(Unidad oponente) {
+		if (puedeAtacar(oponente)) {
+			infringirDanio(oponente);
+		}
+	}
 }
