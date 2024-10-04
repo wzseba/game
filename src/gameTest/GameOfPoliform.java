@@ -54,4 +54,14 @@ class GameOfPoliform {
 		assertEquals(80, soldado.getEnergia());
 	}
 
+	@Test
+	void testRecuperaEnergia_CuandoBebeAgua() {
+		soldado.atacar(caballero);
+		soldado.atacar(caballero);
+
+		soldado.beberAgua();
+
+		assertEquals(100, soldado.getEnergia());
+	}
+
 }
