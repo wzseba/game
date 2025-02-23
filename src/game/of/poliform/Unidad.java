@@ -25,7 +25,7 @@ public abstract class Unidad {
 				&& Math.abs(this.getPosicion() - oponente.getPosicion()) <= hasta;
 	}
 
-	public boolean estaMuerto() {
+	protected boolean estaMuerto() {
 		return (this.getSalud() <= 0);
 	}
 
@@ -33,23 +33,23 @@ public abstract class Unidad {
 		return salud;
 	}
 
-	public void setSalud(int salud) {
+	protected void setSalud(int salud) {
 		this.salud = salud;
 	}
 
-	public int getDanio() {
+	protected int getDanio() {
 		return danio;
 	}
 
-	public void setDanio(int danio) {
+	protected void setDanio(int danio) {
 		this.danio = danio;
 	}
 
-	public void setPosicion(int posicion) {
+	protected void setPosicion(int posicion) {
 		this.posicion = posicion;
 	}
 
-	public int getPosicion() {
+	protected int getPosicion() {
 		return posicion;
 	}
 

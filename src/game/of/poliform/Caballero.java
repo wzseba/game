@@ -11,7 +11,7 @@ public class Caballero extends Unidad {
 
 	public Caballero(int posicion) {
 		super(200, 50, posicion);
-//		this.caballo = new Caballo();
+		this.caballo = new Caballo();
 	}
 
 	@Override
@@ -29,8 +29,8 @@ public class Caballero extends Unidad {
 
 	}
 
-//	public Caballo getCaballo() {
-//		return caballo;
-//	}
+	public Caballo getCaballo() {
+		return caballo;
+	}
 
 }

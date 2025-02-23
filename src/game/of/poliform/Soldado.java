@@ -29,7 +29,7 @@ public class Soldado extends Unidad implements TomadorDeAgua {
 		}
 	}
 
-	protected int getEnergia() {
+	public int getEnergia() {
 		return energia;
 	}
 
